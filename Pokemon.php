@@ -22,17 +22,17 @@ class Pokemon {
     }
 
     public function DoDamage($energyType, $damage) {
-        echo 'Attacked by:' . $energyType . '<br>';
+        echo 'Attacked by:' . $energyType . ' amount: ' . $damage . '<br>';
 
         if($this->Resistance->EnergyType == $energyType){
             $damage = $damage - $this->Resistance->Value;
             echo 'Lightning Resistance: Lowered by ' . $this->Resistance->Value . '<br>';
         }
 
-        // if($this->Weakness->EnergyType == $energyType){
-        //     $damage = $damage * $this->Weakness->Multiplier;
-        //     echo 'Weakness: Multiplied by: ' . $this->Weakness->Multiplier . '<br>';
-        // }
+        if($this->Weakness->EnergyType == $energyType){
+            $damage = $damage * $this->Weakness->Multiplier;
+             echo 'Its super effective! Multiplied by ' . $this->Weakness->Multiplier . ' to ' . $damage . '<br>';
+         }
 
         $this->Health = $this->Health - $damage;
 

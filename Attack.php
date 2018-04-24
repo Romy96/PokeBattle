@@ -4,13 +4,12 @@ class Attack {
     public $Name;           // SlashAttack
     public $AttackPoints;   // TODO: implement https://bulbapedia.bulbagarden.net/wiki/Damage
     public $Attacker; 
-    //public $Enemy;      // pokemon
+      // pokemon
 
     public function __construct($nme, $attack_points, $attacker) {
         $this->Name = $nme;
         $this->Attacker = $attacker;
         $this->AttackPoints = $attack_points;
-        //$this->Enemy = $eny;
     }
 
     public function Execute($target) {
